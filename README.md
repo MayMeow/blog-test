@@ -19,6 +19,29 @@ If Composer is installed globally, run
 composer create-project --prefer-dist jdmaymeow/app [app_name]
 ```
 
+## Deploy with docker-compose
+
+```bash
+git clone https://github.com/asunay/blog-test.git
+cd blog-test
+composer install
+docker-compose up -d
+docker exec blogtest_cakeapp_1 chmod 777 -R tmp
+docker exec blogtest_cakeapp_1 chmod 777 -R logs
+docker exec blogtest_cakeapp_1 chmod 777 -R webroot/data
+docker exec blogtest_cakeapp_1 bin/cake migrations migrate -p CakeAuth
+docker exec blogtest_cakeapp_1 bin/cake migrations migrate -p CakeContent
+docker exec blogtest_cakeapp_1 bin/cake migrations migrate -p CakeTaxonomy
+```
+## Deploy with cakeapp
+
+```bash
+cakeapp deploy blog --repository="https://github.com/asunay/blog-test.git"
+docker exec blog_cakeapp_1 bin/cake migrations migrate -p CakeAuth
+docker exec blog_cakeapp_1 bin/cake migrations migrate -p CakeContent
+docker exec blog_cakeapp_1 bin/cake migrations migrate -p CakeTaxonomy
+```
+
 You should now be able to visit the path to where you installed the app and see the default home page.
 
 ## Configuration

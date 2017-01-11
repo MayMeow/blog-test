@@ -1,9 +1,6 @@
 version: '2'
 
 services:
-    redis:
-        image: redis:latest
-
     db:
         image: mariadb:10
         volumes:
