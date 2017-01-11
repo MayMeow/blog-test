@@ -1,6 +1,9 @@
 version: '2'
 
 services:
+    redis:
+        image: redis:latest
+
     db:
         image: mariadb:10
         volumes:
@@ -16,6 +19,7 @@ services:
         build: .
         depends_on:
             - db
+            - redis
         volumes:
             - cakeapp_data:/var/www/html/webroot/data
         ports:
