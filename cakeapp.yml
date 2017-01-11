@@ -1,12 +1,13 @@
 name: blog-test
 
+# port of your docker container
+port: 8081
+
 variables:
     APP_PASSWORD: 1s2d456s2
     APP_NAME: blog-test
 
-ports:
-    - "8081:80"
-
 scripts:
     - chmod 777 -R tmp
     - chmod 777 -R logs
+    - chmod 777 -R webroot/data
