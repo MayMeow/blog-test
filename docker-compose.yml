@@ -12,7 +12,7 @@ services:
             MYSQL_USER: codeadvent2016
             MYSQL_PASSWORD: codeadvent2016
 
-    codeadventapp:
+    cakeapp:
         build: .
         depends_on:
             - db
@@ -28,4 +28,4 @@ services:
             MYSQL_DB_NAME: codeadvent2016
 volumes:
     db_data:
-    codeadvent_data:
+    cakeapp_data:
