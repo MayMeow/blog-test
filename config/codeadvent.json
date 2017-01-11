@@ -1,0 +1,16 @@
+{
+    "CodeAdvent": {
+        "ssl" : false
+    },
+    "CakeShrink": {
+        "url": "https://jdmay.me/"
+    },
+    "CakeBootstrap": {
+        "Menu": [
+            {"plugin" : "CakeAuth", "controller" : "Users"},
+            {"plugin" : "CakeContent", "controller" : "Nodes"},
+            {"plugin" : "CakeTaxonomy", "controller" : "Vocabularies"},
+            {"plugin" : "CakeTaxonomy", "controller" : "Tags"}
+        ]
+    }
+}
