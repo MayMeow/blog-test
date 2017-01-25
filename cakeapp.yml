@@ -11,3 +11,4 @@ scripts:
     - chmod 777 -R tmp
     - chmod 777 -R logs
     - chmod 777 -R webroot/data
+    - chmod +x bin/cake
